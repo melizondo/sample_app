@@ -31,10 +31,7 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
-<<<<<<< HEAD
     bcrypt-ruby (3.0.1)
-=======
->>>>>>> e136007b0b0a15dfadfe6c536b75e3840fb96e3e
     bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.1.0.0)
     builder (3.0.4)

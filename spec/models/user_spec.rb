@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # == Schema Information
 #
 # Table name: users
@@ -9,18 +10,25 @@
 #  updated_at :datetime         not null
 #
 
+=======
+>>>>>>> e136007b0b0a15dfadfe6c536b75e3840fb96e3e
 require 'spec_helper'
 
 describe User do
 
   before do
+<<<<<<< HEAD
     @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+=======
+    @user = User.new(name: "Example User", email: "user@example.com")
+>>>>>>> e136007b0b0a15dfadfe6c536b75e3840fb96e3e
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+<<<<<<< HEAD
   it { should respond_to(:password_digest) }
    it { should respond_to(:password) }
    it { should respond_to(:remember_token) }
@@ -29,6 +37,23 @@ describe User do
    it { should be_valid }
 
 
+=======
+
+  it { should be_valid }
+
+  describe "when name is not present" do
+    before { @user.name = " " }
+    it { should_not be_valid }
+  end
+    describe "when email is not present" do
+    before { @user.email = " " }
+    it { should_not be_valid }
+  end
+    describe "when name is too long" do
+    before { @user.name = "a" * 51 }
+    it { should_not be_valid }
+  end
+>>>>>>> e136007b0b0a15dfadfe6c536b75e3840fb96e3e
   describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.
@@ -57,6 +82,7 @@ describe User do
 
     it { should_not be_valid }
   end
+<<<<<<< HEAD
   describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
     it { should_not be_valid }
@@ -95,4 +121,6 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+=======
+>>>>>>> e136007b0b0a15dfadfe6c536b75e3840fb96e3e
 end
